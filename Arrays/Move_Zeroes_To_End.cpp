@@ -1,0 +1,47 @@
+// MOVE ZEROES TO END
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void movetoend(int arr[],int n){
+	for(int i=0;i<n;i++){
+		if(arr[i]==0){
+			for(int j=i+1;j<n;j++){
+				if(arr[j]!=0){
+					swap(arr[i],arr[j]);
+					break;
+				}
+			}
+		}
+	}
+}
+
+void print(int arr[], int n){
+	for(int i=0;i<n;i++){
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+}
+
+int main(){
+	int n;
+	cout<<"Enter the size of the array: "<<" ";
+	cin>>n;
+	int  arr[n];
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	
+	movetoend(arr,n);
+	print(arr,n);
+	return 0;
+}
+
+
+
+
+
+// Time Complexity : O(n*n)
+// Space Complexity: O(1)
